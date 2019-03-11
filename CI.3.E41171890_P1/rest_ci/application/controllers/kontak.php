@@ -12,7 +12,6 @@ class Kontak extends REST_Controller {
         $this->load->database();
     }
 
-    //Menampilkan data kontak
     function index_get() {
         $id = $this->get('id');
         if ($id == '') {
@@ -24,7 +23,6 @@ class Kontak extends REST_Controller {
         $this->response($kontak, 200);
     }
 
-    //Mengirim atau menambah data kontak baru
     function index_post() {
         $data = array(
                     'id'           => $this->post('id'),
@@ -38,7 +36,6 @@ class Kontak extends REST_Controller {
         }
     }
 
-    //Memperbarui data kontak yang telah ada
     function index_put() {
         $id = $this->put('id');
         $data = array(
@@ -54,7 +51,6 @@ class Kontak extends REST_Controller {
         }
     }
 
-    //Menghapus salah satu data kontak
     function index_delete() {
         $id = $this->delete('id');
         $this->db->where('id', $id);
@@ -65,5 +61,6 @@ class Kontak extends REST_Controller {
             $this->response(array('status' => 'fail', 502));
         }
     }
+
 }
 ?>
