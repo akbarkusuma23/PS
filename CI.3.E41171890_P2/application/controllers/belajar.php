@@ -10,15 +10,11 @@ class Belajar extends CI_Controller {
 	}
  
 	public function index(){
-		echo "ini method index pada controller belajar | cara membuat controller pada codeigniter | MD Karomi";
+		echo "ini method index pada controller belajar";
 	}
- 
-	public function halo(){				
-		$data = array(
-			'judul' => "Cara Membuat View Pada CodeIgniter",
-			'tutorial' => "CodeIgniter"
-			);
-		$this->load->view('view_belajar', $data);
+    
+    public function halo(){
+		$this->load->view('view_belajar');
 	}
  
 }
