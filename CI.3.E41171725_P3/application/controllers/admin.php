@@ -6,7 +6,7 @@ class Admin extends CI_Controller{
 		parent::__construct();
 	
 		if($this->session->userdata('status') != "login"){
-			redirect(base_url("login"));
+			redirect(base_url("index.php/login"));
 		}
 	}
 

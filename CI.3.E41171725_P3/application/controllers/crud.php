@@ -3,7 +3,10 @@
 class Crud extends CI_Controller{
  
 	function __construct(){
-		parent::__construct();		
+    parent::__construct();	
+    if($this->session->userdata('status') != "login"){
+      redirect(base_url("index.php/login"));
+    }	
 		$this->load->model('m_barang');
         $this->load->helper('url');
 	}
@@ -65,5 +68,9 @@ class Crud extends CI_Controller{
     
         $this->m_barang->update_data($where,$data,'barang');
         redirect('crud/index');
+    }
+    function logout(){
+      $this->session->sess_destroy();
+      redirect(base_url('index.php/login'));
     }
 }

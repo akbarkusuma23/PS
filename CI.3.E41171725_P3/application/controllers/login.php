@@ -5,7 +5,6 @@ class Login extends CI_Controller{
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('m_login');
-
 	}
 
 	function index(){
@@ -29,7 +28,7 @@ class Login extends CI_Controller{
 
 			$this->session->set_userdata($data_session);
 
-			redirect(base_url("index.php/admin"));
+			redirect(base_url("index.php/crud"));
 
 		}else{
 			echo "Username dan password salah !";
@@ -38,6 +37,6 @@ class Login extends CI_Controller{
 
 	function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url('login'));
+		redirect(base_url('index.php/login'));
 	}
 }

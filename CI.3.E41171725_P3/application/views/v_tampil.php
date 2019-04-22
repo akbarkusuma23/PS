@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!--	<title>Membuat CRUD dengan CodeIgniter | MalasNgoding.com</title> -->
+<title>Membuat CRUD dengan CodeIgniter </title>
 </head>
 <body>
 
@@ -32,5 +32,6 @@
 		</tr>
 		<?php } ?>
 	</table>
+	<a href="<?php echo base_url('index.php/login/logout'); ?>">Logout</a>
 </body>
 </html>
